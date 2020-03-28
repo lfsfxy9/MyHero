@@ -1,4 +1,4 @@
-package abstractfactory.util;
+package util;
 
 import java.io.*;
 import java.util.Date;

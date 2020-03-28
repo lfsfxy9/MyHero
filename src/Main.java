@@ -1,6 +1,8 @@
-import abstractfactory.util.PropertyUtil;
+import abstractfactory.factory.HeroAbstractFactory;
+import abstractfactory.factory.WGSFactory;
 import factorymethod.base.Hero;
-import factorymethod.factory.HeroFactory;
+import factorymethod.factory.HeroFactoryMethod;
+import factorymethod.heros.QinQHero;
 
 import java.util.Scanner;
 
@@ -20,21 +22,29 @@ public class Main {
     }
 
     //抽象工厂
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         PropertyUtil.setProperty("1", "test");
         System.out.println(PropertyUtil.getProperty("1"));
 
 
 
-    }
+    }*/
 
-    //工厂方法
+    //抽象工厂
     /*public static void main(String[] args) {
-        String index = getInputIndexStr();
-        Hero hero = HeroFactory.getHero(index);
+        HeroAbstractFactory factory = new WGSFactory();
+        Hero hero = factory.getHero();
         System.out.println(hero.getName());
         scanner.close();
     }*/
+
+    //工厂方法
+    public static void main(String[] args) {
+        HeroFactoryMethod factory = new factorymethod.factory.WGSFactory();
+        Hero hero = new QinQHero();
+        System.out.println(factory.getHeroName(hero));
+        scanner.close();
+    }
 
     //简单工厂
     /*public static void main(String[] args) {
